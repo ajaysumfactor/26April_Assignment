@@ -17,6 +17,11 @@ function isPalindrome(str : string,start : number,end : number): boolean{
 function canBePalindrome(str : string) : boolean{
     let start : number =0 ;
     let end : number =str.length - 1;
+
+    if(isPalindrome(str,start,end) && str.length%2==1){
+        return true;
+    }
+
     while(start<end){
         if(str.charAt(start)==str.charAt(end)){
             start++;
@@ -24,21 +29,21 @@ function canBePalindrome(str : string) : boolean{
         }
         else{
             /*if character at start is not equal to character at end . Then two case arises.
-            1.skip start index check palindrome in (start+1---to -----end)
-            2.skip end index check palindrome in (start--to---end-1)
+            1.skip current start index check palindrome in (start+1---to -----end)
+            2.skip current end index check palindrome in (start--to---end-1)
             */
-            
-
             return isPalindrome(str,start+1,end) || isPalindrome(str,start,end-1);
         }
     }
+    
     return false;
 }
 
 
 console.log(canBePalindrome("asfgfdsa"));
-console.log(canBePalindrome("asdddddfghlkj"))
-
+console.log(canBePalindrome("asdddddfghlkj"));
+console.log(canBePalindrome("abcba"));
+console.log(canBePalindrome("abcbea"));
  
  
 
