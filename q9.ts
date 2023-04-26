@@ -2,20 +2,20 @@
 
 //Method 1--
 
-function maximumSubarraySum(arr : number[]){
-    let len : number = arr.length;
-    let resultMax=Number.MIN_VALUE;
-    for(let i=0;i<len ; i++){
-        let sum=0;
-        for(let j=i;j<len;j++){
-            sum+=arr[j];
-            resultMax=Math.max(resultMax,sum);
-        }
-    }
-    return resultMax;
-}
+// function maximumSubarraySum(arr : number[]){
+//     let len : number = arr.length;
+//     let resultMax=Number.MIN_VALUE;
+//     for(let i=0;i<len ; i++){
+//         let sum=0;
+//         for(let j=i;j<len;j++){
+//             sum+=arr[j];
+//             resultMax=Math.max(resultMax,sum);
+//         }
+//     }
+//     return resultMax;
+// }
 
-console.log(maximumSubarraySum([2,-3,6,-5,4,2]));
+// console.log(maximumSubarraySum([2,-3,6,-5,4,2]));
 
 
 
@@ -34,3 +34,24 @@ function maximumSubarraySum(arr : number[]): number{
 }
 
 console.log(maximumSubarraySum([2,-3,6,-5,4,2]));
+/*
+result=2
+maxres=2
+i=1
+    maxres=max((2+(-3)),-3)=-1
+    result=max(2,-1)=2
+i=2
+    maxres=max((-1+6),6)=6
+    result=max(2,6)=6
+i=3
+    maxres=max((6+(-5)),-5)=1
+    result=max(6,1)=6
+i=4
+    maxres=max((1+4),4)=5
+    result=max(6,5)=6
+i=5
+    maxres=max((5+2),2)=7
+    result=max(6,7)=7
+
+    return 7;
+*/
