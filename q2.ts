@@ -49,3 +49,18 @@ export function findCeil(arr : number[],start : number ,end : number,target: num
   console.log(LIS([10,20,30]));//3
   console.log(LIS([10,9,2,5,3,7,101,18]));//4
   console.log(LIS([0,1,0,3,2,3]))//4
+
+
+  /*
+ let arr=[0,1,0,3,2,3];
+ arr1=[0, , , , , ,] len=1;
+
+  i=1
+    (arr[1]>arr[len-1])
+    [0,1, , , , ,],len=2;
+  i=2
+    (arr[2]<arr[len-1])
+    finding ceil of (0) from arr1
+
+
+  */
