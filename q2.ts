@@ -61,6 +61,4 @@ export function findCeil(arr : number[],start : number ,end : number,target: num
   i=2
     (arr[2]<arr[len-1])
     finding ceil of (0) from arr1
-
-
-  */
+*/
