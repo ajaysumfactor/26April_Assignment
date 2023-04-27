@@ -10,8 +10,8 @@ export function lengthOfLongestSubstringTwoDistinct(str: string) {
 
     for (let i = 0; i < str.length; i++) {
         let fre = (myMap.get(str.charAt(i)) || 0); //initially frequency should not be nan/undefined
-        if (fre == 0) {
-            dist++;
+        if (fre == 0) { //if frequency is zero means map has not that character in it 
+            dist++;//here we have increased distinct element 
         }
         myMap.set(str.charAt(i), fre + 1);
 
@@ -30,3 +30,4 @@ export function lengthOfLongestSubstringTwoDistinct(str: string) {
 
 console.log(lengthOfLongestSubstringTwoDistinct("awwwwwbcddddeeefghj"));//7
 console.log(lengthOfLongestSubstringTwoDistinct("cbebebe"))//6
+console.log(lengthOfLongestSubstringTwoDistinct("misipisssi"));//5
