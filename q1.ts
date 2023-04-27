@@ -7,6 +7,7 @@ export function lengthOfLongestSubstringTwoDistinct(str: string) {
     let dist = 0;
     let start = 0;
     let ans = 0;
+    let s='';
 
     for (let i = 0; i < str.length; i++) {
         let fre = (myMap.get(str.charAt(i)) || 0); //initially frequency should not be nan/undefined
@@ -23,11 +24,15 @@ export function lengthOfLongestSubstringTwoDistinct(str: string) {
             }
             start++;
         }
-        ans = Math.max(ans, i - start + 1);
+        // ans = Math.max(ans, i - start + 1);
+        if((i-start+1)>ans){
+            ans=(i-start+1);
+            s=str.substring(start,(i+1));
+        }
     }
-    return ans;
+    return s;
 }
 
-console.log(lengthOfLongestSubstringTwoDistinct("awwwwwbcddddeeefghj"));//7
-console.log(lengthOfLongestSubstringTwoDistinct("cbebebe"))//6
-console.log(lengthOfLongestSubstringTwoDistinct("misipisssi"));//5
+console.log(lengthOfLongestSubstringTwoDistinct("awwwwwbcddddeeefghj"));//ddddeee
+console.log(lengthOfLongestSubstringTwoDistinct("cbebebe"))//bebebe
+console.log(lengthOfLongestSubstringTwoDistinct("misipisssi"));//isssi
